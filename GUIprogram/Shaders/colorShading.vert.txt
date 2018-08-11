@@ -1,0 +1,25 @@
+#version 130
+//The vertex shader operates on each vertex
+
+//float[2]; 'in' is input data from the VBO, each vertex is 2 floats, x&y coordinate
+in vec2 vertexPosition; //gives a way to pass in color
+in vec4 vertexColor; //4 floating point numbers, so that Sprite can use the color
+
+//passing in from .frag with out
+out vec2 fragmentPosition;
+//could be 'flat out' to stop interpolation 
+out vec4 fragmentColor; //if different colors per vertex, they will get mixed together, the fragment shader will match the mixed color
+
+void main() {
+	//Set the x&y position on the screen
+	gl_Position.xy = vertexPosition;
+	//the z position is zero since we are in 2D
+	gl_Position.z = 0.0;
+	
+	//Indicate that the coordinates are normalized
+	gl_Position.w = 1.0;
+	
+	fragmentPosition = vertexPosition; //interpolation
+	
+	fragmentColor = vertexColor;
+}

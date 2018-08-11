@@ -1,0 +1,4 @@
+﻿  MainGame.cpp
+c:\users\jeffm\onedrive\documents\visual studio 2017\projects\guiprogram\guiprogram\maingame.cpp(70): warning C4305: '+=': truncation from 'double' to 'float'
+  GUIprogram.vcxproj -> C:\Users\jeffm\OneDrive\Documents\Visual Studio 2017\Projects\GUIprogram\Debug\GUIprogram.exe
+  GUIprogram.vcxproj -> C:\Users\jeffm\OneDrive\Documents\Visual Studio 2017\Projects\GUIprogram\Debug\GUIprogram.pdb (Partial PDB)

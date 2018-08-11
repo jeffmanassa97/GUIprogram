@@ -1,0 +1,22 @@
+#version 130
+//fraction shader operates on each pixel in a given polygon
+
+in vec2 fragmentPosition;
+//will used the mixed color from vertex Shader
+in vec4 fragmentColor; 
+
+//rgb(red, green, blue color output, and alpha)
+out vec4 color; 
+
+//mesh, uniform could put everything together by replacing vertexes
+uniform float time;
+
+void main() {
+	//cos(time) is a number between -1 and 1; the equation made it 0 to 1
+	color = vec4(fragmentColor.r * (cos(fragmentPosition.x * 4.0 + time) + 1.0) * 0.5,
+				 fragmentColor.g * (cos(fragmentPosition.y * 8.0 + time) + 1.0) * 0.5,
+				 fragmentColor.b * (cos(fragmentPosition.x * 2.0 + time) + 1.0) * 0.5, fragmentColor.a);
+				 
+}//incorperating position in and time into cosine wave
+//not only will it be changing time, but it will be changing position
+//multipling the position will make it go over a greater area
